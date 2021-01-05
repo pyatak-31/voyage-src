@@ -1,0 +1,102 @@
+// === Товары ===
+.products {
+	margin: $marginSections;
+}
+
+.category {
+	&__list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;	
+	}
+	
+	&__item {
+		display: flex;
+		align-items: center;
+		flex: 1 1 45%;
+		margin: 20px 20px 0 0;
+		padding: 5px 10px;
+		background-color: $mainBgColor;	
+		border: 1px solid rgba(0, 0, 0, .1);
+		transition: $transition;
+		
+		@media (min-width:$screen-lg) {
+			&:hover,
+			&:focus-within {
+				transform: translateY(-2px) scale(1.02, 1.02);
+				box-shadow: 0 0 10px -5px black;
+			}
+		}
+
+		@media (min-width:$screen-lg) {
+			&:hover .category__title,
+			&:focus-within {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	&__image {
+		display: block;
+		width: 100px;
+		height: 100px;
+		
+		img {
+			display: flex;
+			height: 100%;
+		}
+	}
+	
+	&__text {
+		padding: 5px;
+	}
+	
+	&__title {
+		text-decoration: none;
+		color: $mainFontColor;
+		font-size: 25px;
+		font-weight: bold;
+	}
+	
+	&__description {
+		margin: 10px 0 0 0;
+		font-size: 18px;
+		color: $thirdFontColor;
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.category {
+		&__list {
+			flex-direction: column;	
+			//align-items: center;
+		}
+		
+		&__item {
+			flex: 0 0 100%;
+			margin: 20px 0 0 0;
+			padding: 5px 10px;
+		}
+		
+		&__image {
+			flex: 0 1 100px;
+			width: 100px;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.category {
+		&__text {
+			padding: 5px;
+		}
+		
+		&__title {
+			font-size: 18px;
+		}
+		
+		&__description {
+			font-size: 15px;
+		}
+	}
+}

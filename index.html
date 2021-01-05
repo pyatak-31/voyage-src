@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес компания</title>
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!--Шапка сайта-->
+	@@include('_header.html')
+
+    <!--Главная часть-->
+    <main class="main">
+		<!--Заголовок-->
+		<h1 class="title-hidden">Главная страница сайта компании Voyage, занимающейся всем, связанным с туризмом</h1>
+		
+		<!--Hero-слайдер-->
+		@@include('_hero.html')
+
+		<!--Каталог-->
+		@@include('_catalog.html')
+
+		<!--Товары-->
+		@@include('_products.html')
+
+		<!--Предложения-->
+		@@include('_offers.html')
+
+		<!--Преимущества-->
+		@@include('_advantages.html')
+
+		<!--Новости-->
+		@@include('_news.html')
+		
+		<!--Статьи-->
+		@@include('_articles.html')
+
+		<!--Отзывы-->
+		@@include('_reviews.html')
+    </main>
+
+    <!--Подвал сайта-->
+    @@include('_footer.html')
+	
+	<!--Скрипты-->
+	<script src="js/js.min.js"></script>
+
+</body>
+</html>

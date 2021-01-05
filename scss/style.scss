@@ -1,0 +1,47 @@
+@import 'normalize.scss';
+@import 'swiper-bundle.min';
+
+// === Fonts ===
+@import 'fonts';
+
+// === Mixins ===
+@mixin font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+// === Variables ===
+@import 'variables';
+
+// === Common ===
+@import 'common';
+
+// === Header ===
+@import 'header';
+
+// === Main ===
+//Hero-слайдер
+@import 'hero';
+
+//Каталог
+@import 'catalog';
+
+//Товары
+@import 'products';
+
+//Предложения
+@import 'offers';
+
+//Преимущества
+@import 'advantages';
+
+//Новости
+@import 'news';
+
+//Статьи
+@import 'articles';
+
+//Отзывы
+@import 'reviews';
+
+// === Footer ===
+@import 'footer';

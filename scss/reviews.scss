@@ -1,0 +1,124 @@
+// === Отзывы ===
+.reviews {
+	position: relative;
+	margin: $marginSections;
+}
+
+.reviews-slider {
+	position: relative;
+	z-index: 0;
+	
+	&__wrapper {
+		list-style: none;
+	}
+	
+	&__slide {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		border: 1px solid rgba(0, 0, 0, .3);
+		background: rgb(255,255,255);
+		background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(207,217,222,0.9640231092436975) 53%, rgba(235,197,197,1) 100%);
+	}
+	
+	&__card {
+		display: flex;
+		flex-direction: column;
+		
+		width: 400px;
+		height: 100%;
+	}
+	
+	&__head {
+		display: flex;	
+	}
+	
+	&__image {
+		width: 80px;
+		border: 1px dashed $mainFontColor;
+		border-radius: 50%;
+		overflow: hidden;
+		
+		img {
+			display: flex;
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	&__text {
+		flex: 1 1;
+		align-self: center;
+		text-align: center;
+	}
+	
+	&__name {
+		letter-spacing: 2px;
+		color: $mainFontColor;
+		font-size: 25px;
+		font-weight: bold;
+	}
+	
+	&__position {
+		color: $thirdFontColor;
+		font-size: 15px;
+		border-top: 1px dashed $mainFontColor;
+		transition: $transition;
+	}
+	
+	&__review {
+		flex: 1 1;
+		margin: 20px 0 0 0;
+		text-align: center;
+		color: $mainFontColor;
+		font-style: italic;
+		font-size: 17px;
+	}
+
+	.swiper-button-prev:after,
+	.swiper-button-next:after {
+		position: absolute;
+		top: 100%;
+		display: flex;
+		color: $mainFontColor;
+		font-size: 40px;
+	}
+}
+
+@media (max-width: $screen-md-max) {
+	.reviews-slider {		
+		&__card {		
+			width: 80%;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.reviews-slider {
+		&__slide {
+			padding: 10px;
+		}
+		
+		&__image {
+			width: 70px;
+		}
+		
+		&__name {
+			font-size: 18px;
+		}
+		
+		&__position {
+			font-size: 13px;
+		}
+		
+		&__review {
+			font-size: 15px;
+		}
+	
+		.swiper-button-prev:after,
+		.swiper-button-next:after {
+			font-size: 30px;
+		}
+	}
+}

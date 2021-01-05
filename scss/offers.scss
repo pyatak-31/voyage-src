@@ -1,0 +1,189 @@
+// === Предложения ===
+.offers {
+	margin: $marginSections;
+	
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	&__list {
+		display: none;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		
+		&--discount {
+			display: flex;
+		}
+	}
+	
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 250px;
+		margin: 20px 0 0;
+		padding: 10px;
+		border: 1px solid rgba(0, 0, 0, .1);
+		box-shadow: 0 0 10px -7px black;
+	}
+	
+	&__image{ 
+		img {
+			display: flex;
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	&__title {
+		flex: 1 1;
+		margin: 15px 0 0 0;
+		text-decoration: none;
+		text-align: center;
+		color: $mainFontColor;
+		font-size: 20px;
+		transition: $transition;
+
+		@media (min-width: $screen-lg) {
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	&__category {
+		margin: 10px 0 0 0;
+		text-decoration: none;
+		color: $thirdFontColor;
+		font-size: 15px;
+		font-weight: bold;
+		transition: $transition;
+
+		@media (min-width: $screen-lg) {
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	&__info {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 5px 0 0 0;
+		text-align: center;
+	}
+	
+	&__term {
+		margin: 0 10px 0 0;
+		color: $thirdFontColor;
+		font-size: 15px;
+	}
+	
+	&__food {
+		color: $thirdFontColor;
+		font-size: 15px;
+	}
+	
+	&__price {
+		margin: 5px 0 0 0;
+		font-size: 20px;
+		
+		&--old {
+			text-decoration: line-through;
+			color: $thirdFontColor;
+			font-size: 15px;
+		}
+	}
+	
+	&__btn {
+		margin: 15px 0 0 0;
+		padding: 10px;
+		color: $fourthFontColor;
+		background-color: $secondBgColor;
+		transition: $transition;
+		cursor: pointer;
+
+		@media (min-width: $screen-lg) {
+			&:hover,
+			&:focus {
+				color: $mainFontColor;
+				background-color: $thirdBgColor;
+			}
+		}
+	}
+}
+
+// === Табы ===
+.tabs {
+	margin: 30px 0 0 0;
+	display: flex;
+	justify-content: center;
+
+	&__link {
+		padding: 15px;
+		background-color: transparent;
+		border: 1px solid rgba(0, 0, 0, .1);
+
+		&.active {
+			background-color: $thirdBgColor;
+		}
+	}
+}
+
+// === Ярлыки ===
+.labels {
+	position: absolute;
+	top: 0;
+	right: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+	
+	&__check--new,
+	&__check--hit,
+	&__check--discount {
+		display: none;
+	}
+	
+	&-all {
+		display: none;
+		margin: 3px 0;
+		padding: 5px;
+		color: $fourthFontColor;
+		font-size: 15px;
+		font-weight: bold;
+	}
+	
+	&__hit {
+		background-color: #fc9038;
+	}
+	
+	&__discount {
+		background-color: #f30000;
+	}
+	
+	&__new {
+		background-color: #008F0B;
+	}
+	
+	&__check--hit:checked + .labels__hit,
+	&__check--discount:checked + .labels__discount,
+	&__check--new:checked + .labels__new {
+		display: inline-block;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.offers {
+		&__list {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+}

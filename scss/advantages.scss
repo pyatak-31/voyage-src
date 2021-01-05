@@ -1,0 +1,44 @@
+//=== Преимущества ===
+.advantages {
+	margin: $marginSections;
+
+	&__list {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 250px;
+		margin: 20px 0 0 0;
+
+	}
+	
+	&__image {
+		width: 100px;
+		
+		img {
+			display: flex;
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	&__title {
+		flex: 1 1;
+		max-width: 200px;
+		color: $mainFontColor;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	&__description {
+		padding: 5px 10px;
+		color: $thirdFontColor;
+		text-align: center;
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,857 @@
+//=== Шапка сайта ===
+.header {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(255, 255, 255, 0.8);
+
+	// Меню 
+	&__menu {
+		position: relative;
+
+		&--static {
+			position: static;
+		}
+		
+		&--fixed {
+			position: fixed;
+			top: 0;
+			z-index: 10;
+			width: 100%; 
+			background-color: #fff;
+			box-shadow: 0 0 10px -5px $fourBgColor;
+		}
+	}
+}
+
+//=== Контакты ===
+.contacts {
+	&__container {
+		display: flex;
+		align-items: center;
+	}
+
+	//- Логотип -
+	&__logo {
+		flex: 0 1 150px;
+		margin: 0 10px 0 0;
+		border-radius: 10px;
+		box-shadow: 0 0 4px -3px black;
+
+		&:hover,
+		&:focus {
+			box-shadow: 0 0 1px 0 black;
+		}
+
+		img {
+			display: flex;
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+		}
+	}
+
+	//- Элементы меню контактов -
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex: 1 1;
+	}
+
+	//- Адрес -
+	&__address {
+		max-width: 150px;
+		padding: 0 0 0 20px;
+		color: $mainFontColor;
+		font-size: 12px;
+		line-height: 1.4;
+		background-image: url("../img/map.svg");
+		background-repeat: no-repeat;
+		background-size: 20px;
+		background-position: top left;
+	}
+
+	//- Город -
+	&__city {
+		position: relative;
+		color: $mainFontColor;
+		font-size: 12px;
+		background-color: transparent;
+		cursor: pointer;
+		transition: $transition;
+
+		&:hover,
+		&:focus {
+			color: $secondFontColor;
+			text-shadow: 0 0 .2px black;
+
+			&:after {
+				border-top-color: $secondFontColor;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 40%;
+			right: -25%;
+			border: 5px solid transparent; 
+			border-top: 5px solid $mainFontColor;
+		}
+	}
+
+	//- Блок с телефоном и графиком работы -
+	&__info {
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 0 20px;
+		text-align: center;
+	}
+
+	&__telephone {
+		padding: 0 0 0 20px;
+		text-decoration: none;
+		letter-spacing: 1px;
+		color: $mainFontColor;
+		font-weight: bold;
+		font-size: 16px;
+		background-image: url("../img/phone.svg");
+		background-repeat: no-repeat;
+		background-size: 15px;
+		background-position: center left;
+		transition: $transition;
+
+		&:hover,
+		&:focus {
+			color: $secondFontColor;
+			text-shadow: 0 0 .2px black;
+		}
+	}
+
+	&__schedule {
+		color: $thirdFontColor;
+		font-size: 12px;
+	}
+
+	//- Заказать звонок -
+	&__order {
+		padding: 10px 15px;
+		color: $secondFontColor;
+		font-size: 18px;
+		font-weight: bold;
+		background-color: transparent;
+		border: 1px solid $secondFontColor;
+		border-radius: 20px;
+		cursor: pointer;
+		transition: $transition;
+
+		&:hover,
+		&:focus {
+			text-shadow: 0 0 .2px black;
+			background-color: $thirdBgColor;
+			box-shadow: 0 0 7px -3px black;
+		}
+	}
+}
+
+//=== Меню ===
+.menu {
+
+	&__container {
+		position: relative;
+		display: flex;
+	}
+
+	//- Меню-гамбургер не работающий -
+	&__hamburger {
+		display: none;
+		background-color: $secondBgColor;
+	}
+
+	//- Элементы меню первого уровня -
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		flex: 1 1;
+		list-style: none;
+	}
+
+	//- Элемент меню первого уровня -
+	&__item {
+		position: relative;
+		display: flex;
+
+		&-catalog {
+			position: static;
+		}
+	}
+
+	&__link {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		text-decoration: none;
+		white-space: nowrap;
+		letter-spacing: 1px;
+		color: $mainFontColor;
+		font-size: 16px;
+		font-weight: bold;
+		border-bottom: 3px solid transparent;
+		transition: $transition;
+
+		&:hover,
+		&:focus {
+			color: $secondFontColor;
+			text-shadow: 0 0 .2px black;
+			border-bottom: 3px solid $secondFontColor;
+		}
+	}
+
+	&__arrow {
+		display: inline-block;
+		align-self: center;
+		order: 2;
+		width: 11px;
+		height: 10px;
+        background-image: url("../img/arrow-down.svg");
+        background-size: cover;
+		background-repeat: no-repeat;
+		
+		&:hover + .menu__link {
+			color: $secondFontColor;
+			text-shadow: 0 0 .2px black;
+			border-bottom: 3px solid $secondFontColor;
+		}
+
+		&.activeArrow {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__action {
+		margin: 0 0 0 20px;
+	}
+}
+
+//=== Меню второго уровня ===
+.sub-menu {
+	//- Элементы меню второго уровня -
+	&__list,
+	&__list-catalog {
+		position: absolute;
+		top: 35px;
+		min-width: 100%;
+		list-style: none;
+		background-color: white;
+		visibility: hidden;
+		opacity: 0;
+		transition: $transition;
+		border: 1px solid rgba(0, 0, 0, .3);
+		border-top: none;
+	}
+
+	&__list {
+		&-catalog {
+			position: absolute;
+			left: 0;
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+	}
+
+	//- Элемент меню второго уровня -
+	&__item {
+		position: relative;
+		display: flex;
+
+		&:not(:first-child) {
+			border-top: 1px solid grey;
+		}
+
+		&-catalog {
+			max-width: 200px;
+			margin: 40px 60px;
+			padding: 0 0 0 70px;
+			background-repeat: no-repeat;
+			background-position: top left;
+			background-size: 50px 50px;
+			border: 0;
+		}
+
+		&-summer {
+			background-image: url("../img/catalog-summer.jpg");
+		}
+
+		&-winter {
+			background-image: url("../img/catalog-winter.jpg");
+		}
+
+		&-excursion {
+			background-image: url("../img/catalog-excursion.jpg");
+		}
+
+		&-extreme {
+			background-image: url("../img/catalog-extreme.jpg");
+		}
+
+		&-leisure {
+			background-image: url("../img/catalog-leisure.jpg");
+		}
+
+		&-children {
+			background-image: url("../img/catalog-children.jpg");
+		}
+	}
+
+	&__link {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		text-decoration: none;
+		color: $mainFontColor;
+		font-size: 15px;
+		white-space: nowrap;
+		color: $mainFontColor;
+		border-bottom: 1px solid transparent;
+		transition: $transition;
+
+		&:hover,
+		&:focus {
+			color: $secondFontColor;
+			text-shadow: 0 0 .2px black;
+			border-bottom: 1px solid $secondFontColor;
+		}
+
+		&-catalog {
+			text-decoration: none;
+			color: $mainFontColor;
+			font-size: 18px;
+			font-weight: bold;
+			border-bottom: 1px solid transparent;
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				color: $secondFontColor;
+				text-shadow: 0 0 .2px black;
+				border-bottom: 1px solid $secondFontColor;
+			}
+		}
+	}
+
+	&__arrow {
+		display: inline-block;
+		align-self: center;
+		order: 2;
+		width: 11px;
+		height: 10px;
+		margin: 0 5px 0 0;
+        background-image: url("../img/arrow-down.svg");
+        background-size: cover;
+		background-repeat: no-repeat;
+		transform: rotate(-90deg);
+		
+		&:hover + .sub-menu__link {
+			color: $secondFontColor;
+			text-shadow: 0 0 .2px black;
+			border-bottom: 1px solid $secondFontColor;
+		}
+
+		&.activeArrow {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+//=== Меню третьего уровня ===
+.sub-sub-menu {
+	//- Элементы меню третьего уровня -
+	&__list {
+		position: absolute;
+		top: 0;
+		left: 80%;
+		display: flex;
+		min-width: 100%;
+		flex-direction: column;
+		list-style: none;
+		background-color: white;
+		border: 1px solid rgba(0, 0, 0, .3);
+		visibility: hidden;
+		opacity: 0;
+		transition: $transition;
+
+		&-catalog {
+			margin: 5px 0 0 0;
+			list-style: none;
+		}
+	}
+
+	//- Элемент меню третьего уровня -
+	&__item {
+
+		&:not(:first-child) {
+			border-top: 1px solid grey;
+		}
+		
+	}
+
+	&__link {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		white-space: nowrap;
+		text-decoration: none;
+		color: $mainFontColor;
+		font-size: 15px;
+		border-bottom: 1px solid transparent;
+		transition: $transition;
+
+		&:hover,
+		&:focus {
+			color: $secondFontColor;
+			text-shadow: 0 0 .2px black;
+			border-bottom: 1px solid $secondFontColor;
+		}
+
+		&-catalog {
+			display: inline-block;
+			margin: 5px 0 0 0;
+			text-decoration: none;
+			color: $mainFontColor;
+			font-size: 15px;
+			border-bottom: 1px solid transparent;
+
+			&:hover,
+			&:focus {
+				color: $secondFontColor;
+				text-shadow: 0 0 .2px black;
+				border-bottom: 1px solid $secondFontColor;
+			}
+		}
+	}
+}
+
+//=== Вспомогательное меню ===
+.action {
+	display: flex;
+	flex: 0 0 10%;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 10px 0 0;
+	list-style: none;	
+
+	&__link {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background-size: cover;
+
+		&--user {
+			background-image: url("../img/user.svg");
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				background-color: $thirdBgColor;
+				border-radius: 50%;
+			}
+		}
+		
+		&--search {
+			background-image: url("../img/search.svg");
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				background-color: $thirdBgColor;
+				border-radius: 50%;
+			}
+		}
+
+		&--cart {
+			position: relative;
+			background-image: url("../img/cart.svg");
+			transition: $transition;
+
+			&:hover,
+			&:focus {
+				background-color: $thirdBgColor;
+				border-radius: 50%;
+			}
+
+			&:hover span,
+			&:focus span {
+				background-color: $secondBgColor;
+				border-radius: 50%;
+			}
+
+			span {
+				position: absolute;
+				left: 100%;
+				display: inline-block;
+				padding: 2px 5px;
+				background-color: grey;
+				color: white;
+				font-size: 12px;
+				border-radius: 50%;
+				transition: $transition;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-md-max) {
+	.contacts {
+
+		&__logo {
+			flex: 0 0 120px;
+			transform: translate(35%, 0);
+		}
+
+		&__list {
+			flex-direction: column;
+			justify-content: flex-start;
+			flex: 0 0;
+			margin: 20px 0 0 0;
+		}
+	
+		&__address {
+			max-width: 100%;
+			padding: 5px 5px 5px 20px;
+			font-size: 15px;
+		}
+	
+		&__city {
+			color: $mainFontColor;
+			font-size: 15px;
+		}
+	
+		&__info {
+			margin: 20px 0 0 0;
+		}
+	
+		&__telephone {
+			padding: 0 0 0 20px;
+			font-size: 18px;
+		}
+	
+		&__schedule {
+			font-size: 14px;
+		}
+	
+		&__order {
+			margin: 20px 0 0 0;
+			padding: 10px 15px;
+		}
+	}
+
+	.menu {
+		
+		&__container {
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__bl {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, .7);
+		}
+		
+		&__hamburger {
+			position: relative;
+			left: 0;
+			z-index: 5;
+			display: block;
+			width: 60px;
+			height: 50px;
+			border-radius: 0 7px 0 7px;
+			box-shadow: 0 0 5px -2px black;
+			transition: $transition;
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				left: 5px;
+				width: 80%;
+				height: 4px;
+				background-color: $mainFontColor;
+				border-radius: 20%;
+			}
+		
+			&:before {
+				top: 10px;
+				transition: 1s;
+			}
+
+			&:after {
+				bottom: 10px;
+				transition: 1s;
+			}
+
+			&.activeHamburger:before {
+				transform: rotate(45deg);
+				top: 23px; 
+			}
+
+			&.activeHamburger:after {
+				transform: rotate(-45deg); 
+				bottom: 23px;
+			}
+
+			&.activeHamburger {
+				left: 50%;
+				border: 1px solid $mainFontColor;
+				border-left: 1px dashed $mainFontColor;
+				border-radius: 0 0px 10px 0;
+				background-color: $mainBgColor;
+				box-shadow: 0 0 10px -5px white;
+			}
+
+			&.activeHamburger span {
+				transform: scale(0);
+			}
+
+			span {
+				position: absolute;
+				top: 48%;
+				left: 5px;
+				width: 80%;
+				height: 4px;
+				background-color: $mainFontColor;
+				border-radius: 30px;
+				transition: $transition;
+			}
+		}
+		
+		&__list {
+			position: fixed;
+			top: 0;
+			left: -10px;
+			z-index: 4;
+			flex-direction: column;
+			justify-content: flex-start;
+			visibility: hidden;
+			opacity: 0;
+			width: 50%;
+			height: 100%;
+			padding: 0px 0 0 0;
+			background-color:#fff;
+			overflow-y: auto;
+			transition: $transition;
+		}
+		
+		.flex {
+			display: flex;
+		}
+		
+		.active {
+			left: 0;
+			visibility: visible;
+			opacity: 1;
+		}
+		
+		&__item {
+			width: 100%;
+			border-bottom: 1px solid $mainFontColor;
+
+			&:first-child {
+				border-top: 1px solid $mainFontColor;
+			}
+
+			&-catalog {
+				position: relative;
+			}
+		}
+
+		&__link {
+			width: 100%;
+
+			&--active {
+				color: $mainFontColor;
+				background-color: $thirdBgColor;
+			}
+		}
+
+		&__arrow {
+			padding: 10px;
+			width: 70px;
+			height: 100%;
+			background-color: $mainMobileMenuBgColor;
+			background-size: 20px 20px;
+			background-position: center center;
+			border-left: 1px solid black;
+		}
+	}
+
+	.sub-menu {
+		&__list,
+		&__list-catalog {
+			position: absolute;
+			top: 0;
+			z-index: 5;
+			min-width: 100%;
+			background-color: $mainMobileMenuBgColor;
+			border-bottom: 1px solid black;
+			transition: .1s;
+		}
+	
+		&__list {
+			&-catalog {
+				position: absolute;
+				left: 0;
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				align-items: center;
+				text-align: center;
+			}
+		}
+	
+		&__item {
+			position: relative;
+	
+			&:not(:first-child) {
+				border-top: 1px solid grey;
+			}
+	
+			&-catalog {
+				margin: 10px 0;
+				padding: 0 0 10px 0;	
+				border: 0;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid grey;
+				}
+			}
+	
+			&-summer,
+			&-winter,
+			&-excursion, 
+			&-extreme,
+			&-leisure,
+			&-children {
+				background-image: none;
+			}
+		}
+	
+		&__link {
+			display: block;
+			padding: 15px;
+			font-size: 16px;
+	
+			&-catalog {
+				font-size: 17px;
+			}
+		}
+
+		&__arrow {
+			margin: 0;
+			width: 70px;
+			height: 50px;
+			background-color: $secondMobileMenuBgColor;
+			background-size: 20px 20px;
+			background-position: center center;
+			border-left: 1px dashed black;
+			transform: rotate(0deg);
+		}
+	}
+
+	.sub-sub-menu {
+		&__list {
+			left: 0;
+			background-color: $secondMobileMenuBgColor;
+			border-bottom: 1px solid black;
+		
+			&-catalog {
+				list-style: none;
+			}
+		}
+		
+		&__link {
+			padding: 15px;
+			font-size: 16px;
+		
+			&-catalog {
+				margin: 10px 0 0 0;
+				font-size: 16px;
+			}
+		}
+	}
+	
+	.action {
+		flex: 0 0 120px;	
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.contacts {
+
+		&__logo {
+			transform: translate(5%, 0);
+		}
+
+		&__list {
+			margin: 30px 0 0 0;
+		}
+	
+		&__address {
+			text-align: center;
+			font-size: 13px;
+		}
+	
+		&__city {
+			font-size: 13px;
+		}
+	
+		&__telephone {
+			font-size: 16px;
+		}
+	
+		&__schedule {
+			font-size: 13px;
+		}
+	
+		&__order {
+			font-size: 16px;
+		}
+	}
+
+	.menu {
+		
+		&__container {
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		&__hamburger {
+			margin: 0 0 0 10px;
+
+			&.activeHamburger {
+				left: 71.5%;
+			}			
+		}
+		
+		&__list {
+			width: 70%;
+		}
+
+		&__item {
+			border-top: 1px solid black;
+		}
+	}
+	
+	.action {
+		flex: 0 0 10%;
+		padding: 0 25px 0 0;
+	}
+}

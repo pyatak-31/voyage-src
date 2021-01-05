@@ -1,0 +1,141 @@
+// === Common ===
+*,
+*:before, 
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    @include font-open-sans;
+    //background-color: yellowgreen;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+body.mouse .menu__item:hover .sub-menu__list,
+body.mouse .menu__item:focus-within .sub-menu__list,
+body.mouse .menu__item:hover .sub-menu__list-catalog,
+body.mouse .menu__item:focus-within .sub-menu__list-catalog {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+body.mouse .menu__item:hover .menu__arrow,
+body.mouse .menu__item:focus-within .menu__arrow {
+    transform: rotate(180deg);
+}
+
+body.mouse .sub-menu__item:hover .sub-sub-menu__list,
+body.mouse .sub-menu__item:focus-within .sub-sub-menu__list,
+body.mouse .sub-menu__item:hover .sub-sub-menu__list-catalog,
+body.mouse .sub-menu__item:focus-within .sub-sub-menu__list-catalog {
+    top: 0;
+    left: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+body.mouse .sub-menu__item:hover .sub-menu__arrow,
+body.mouse .sub-menu__item:focus-within .sub-menu__arrow {
+    transform: rotate(90deg);
+}
+
+body.touch .sub-menu__list.openMenu,
+body.touch .sub-menu__list-catalog.openMenu {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+body.touch .sub-sub-menu__list.openMenu,
+body.touch .sub-sub-menu__list-catalog.openMenu {
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: $screen-md-max) {
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+.title-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.main-section-header {
+	display: flex;
+	flex-direction: column;
+	
+	&__title-wrapper {
+		display: flex;
+		align-items: center;
+	}
+	
+	&__title {
+		flex: 1 1 200px;
+        font-size: 40px;
+        color: $mainFontColor;
+	}
+
+	&__link {
+        text-decoration: none;
+        color: $secondFontColor;
+        font-size: 16px;
+        transition: $transition;
+
+        @media (min-width: $screen-lg) {
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+                color: $mainFontColor;
+            }
+        }
+    }
+	
+	&__description {
+		max-width: 1000px;
+		margin: 20px 0 0 0;
+        font-size: 20px;
+        color: $mainFontColor;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+    .main-section-header {
+        padding: 0 10px;
+        
+		&__title {
+			font-size: 25px;
+		}
+		
+		&__description {
+			font-size: 16px;
+		}
+    }
+}

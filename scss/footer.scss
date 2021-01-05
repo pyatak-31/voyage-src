@@ -1,0 +1,191 @@
+// === Подвал сайта ===
+.footer {
+	margin: $marginSections;
+}
+
+// === Подписка ===
+.subscription {
+	padding: 20px 10px;
+	background-color: $fourBgColor;
+	
+	&__form {
+		display: flex;
+		justify-content: center;
+	}
+	
+	&__label {
+		flex: 0 0 150px;
+		margin: 0 20px 0 0;
+		color: $fourthFontColor;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	
+	&__field {
+		flex: 0 1 400px;
+	}
+	
+	&__submit {
+		padding: 10px;
+		color: $fourthFontColor;
+		font-weight: bold;
+		font-size: 15px;
+		background-color: $secondBgColor;
+		transition: $transition;
+		cursor: pointer;
+
+		@media (min-width: $screen-lg) {
+			&:hover,
+			&:focus {
+				color: $mainFontColor;
+				background-color: $thirdBgColor;
+			}
+		}
+	}
+}
+
+.footer-body {
+	background-color: $thirdBgColor;
+	
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.footer-links {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 20px;
+	
+	&__column {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	&__title {
+		text-decoration: none;
+		color: $mainFontColor;
+		font-weight: bold;
+		font-size: 18px;
+		transition: $transition;
+
+		@media (min-width: $screen-lg) {
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	&__list {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+	}
+	
+	&__item {
+		margin: 5px 0 0 0;
+	}
+	
+	&__link {
+		text-decoration: none;
+		color: $mainFontColor;
+		font-size: 15px;
+
+		@media (min-width: $screen-lg) {
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.footer-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 30px 10px;
+	border-top: 1px solid $mainFontColor;
+	
+	&__company {
+		color: $mainFontColor;
+		font-weight: bold;
+	}
+	
+	&__social-list {
+		display: flex;
+		list-style: none;
+	}
+
+	&__social-item {
+		&:not(:first-child) {
+			margin: 0 0 0 10px;
+		}
+	}
+	
+	&__social-link {
+		display: block;
+		width: 40px;
+
+		img {
+			display: flex;
+			width: 100%;
+			height: auto;
+			transition: $transition;
+
+			@media (min-width: $screen-lg) {
+				&:hover,
+				&:focus {
+					border-radius: 50%;	
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.footer-links {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		&__column {
+			&:not(:first-child) {
+				margin: 30px 0 0 0;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.subscription {
+	
+		&__form {
+			flex-direction: column;
+			align-items: center;
+		}
+	
+		&__label {
+			flex: 0 0 40px;
+			margin: 0;
+		}
+	
+	&__field {
+		flex: 0 1 30px;
+	}
+	
+	&__submit {
+		flex: 1 1 30px;
+	}
+}
+
+	.footer-info {
+		flex-direction: column;
+
+		&__social-list {
+			margin: 20px 0 0 0;
+		}
+	}
+}

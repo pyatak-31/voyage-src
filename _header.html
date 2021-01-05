@@ -1,0 +1,341 @@
+<!--Шапка сайта-->
+<header class="header">
+
+	<!--Контакты-->
+	<div class="contacts">
+		<div class="container contacts__container">
+			<!--Логотип-->
+			<a href="#" class="contacts__logo" data-da=".menu__container, 991, 1">
+				<picture>
+					<source 
+						media="(max-width: 991px)"
+						srcset="img/logo-mobile@2x.webp 2x,
+								img/logo-mobile.webp 1x" 
+						type="image/webp">
+						
+					<source 
+						media="(max-width: 991px)"
+						srcset="img/logo-mobile.jpg 2x,
+								img/logo-mobile.jpg 1x" 
+						type="image/jpeg">    
+
+					<source
+					srcset="img/logo@2x.webp 2x,
+							img/logo.webp 1x" 
+						type="image/webp">
+						
+					<source 
+						srcset="img/logo@2x.jpg 2x,
+								img/logo.jpg 1x" 
+						type="image/jpeg">    
+					<img src="img/logo.jpg" alt="Логотип фирмы Voyage">
+				</picture>
+			</a>
+				
+			<!--Блок с адресом, телефоном, графиком-->
+			<div class="contacts__list" data-da=".menu__list, 991, last">
+				<p class="contacts__address">г. Белгород, ул. Щорса, д.1, эт. 2, оф. 23</p>
+					
+				<button class="contacts__city">Белгород</button>
+					
+				<div class="contacts__info">
+					<a href="tel:+79876543210" class="contacts__telephone">+7 (987) 654-32-10</a>
+					<p class="contacts__schedule">Пн - Вс: 10.00 - 19.00</p>
+				</div>
+						
+				<button class="contacts__order">Заказать звонок</button>
+			</div>
+		</div>
+	</div>
+		
+	<!--Меню-->
+	<nav class="menu header__menu">
+		<div class="container menu__container">
+			<!--Значок меню-гамбургера-->
+			<div class="menu__hamburger"><span></span></div>
+			
+			<!--Элементы первого уровня-->
+			<ul class="menu__list">
+				<!--Элемент меню первого уровня-->
+				<li class="menu__item">
+					<span class="arrow menu__arrow"></span>
+					<a href="#" class="menu__link menu-links">О нас</a>
+
+					<!--Элементы второго уровня-->
+					<ul class="sub-menu__list">
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">О компании</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">История</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Награды</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Партнеры</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Отзывы</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Сотрудники</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Вакансии</a></li>
+					</ul>
+				</li>
+				
+				<!--Элемент меню первого уровня-->
+				<li class="menu__item menu__item-catalog">
+					<span class="arrow menu__arrow"></span>
+					<a href="#" class="menu__link menu-links">Каталог</a>
+
+					<!--Элементы второго уровня-->
+					<ul class="sub-menu__list-catalog">
+						<li class="sub-menu__item-catalog sub-menu__item-summer">
+							<a href="#" class="sub-menu__link-catalog menu-links">Летние курорты</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list-catalog">
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Автокраны</a></li>
+									
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Манипуляторы</a></li>
+									
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Самосвалы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Экскаваторы</a></li>
+							</ul>
+						</li>
+						
+						<li class="sub-menu__item-catalog sub-menu__item-winter">
+							<a href="#" class="sub-menu__link-catalog menu-links">Зимние курорты</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list-catalog">
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Автокраны</a></li>
+									
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Манипуляторы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Самосвалы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Экскаваторы</a></li>
+							</ul>
+						</li>
+								
+						<li class="sub-menu__item-catalog sub-menu__item-excursion">
+							<a href="#" class="sub-menu__link-catalog menu-links">Экскурсионные путевки</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list-catalog">
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Автокраны</a></li>
+									
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Манипуляторы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Самосвалы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Экскаваторы</a></li>
+							</ul>
+						</li>
+								
+						<li class="sub-menu__item-catalog sub-menu__item-extreme">
+							<a href="#" class="sub-menu__link-catalog menu-links">Экстримальный отдых</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list-catalog">
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Автокраны</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Манипуляторы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Самосвалы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Экскаваторы</a></li>
+							</ul>
+						</li>
+								
+						<li class="sub-menu__item-catalog sub-menu__item-leisure">
+							<a href="#" class="sub-menu__link-catalog menu-links">Активный отдых</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list-catalog">
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Автокраны</a></li>
+									
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Манипуляторы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Самосвалы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Экскаваторы</a></li>
+							</ul>
+						</li>
+								
+						<li class="sub-menu__item-catalog sub-menu__item-children">
+							<a href="#" class="sub-menu__link-catalog menu-links">Детский отдых</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list-catalog">
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Автокраны</a></li>
+									
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Манипуляторы</a></li>
+									
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Самосвалы</a></li>
+										
+								<li class="sub-sub-menu__item-catalog"><a href="#" class="sub-sub-menu__link-catalog menu-links">Экскаваторы</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				
+				<!--Элемент меню первого уровня-->
+				<li class="menu__item">
+					<span class="arrow menu__arrow"></span>
+					<a href="#" class="menu__link menu-links">Услуги</a>
+
+					<!--Элементы второго уровня-->
+					<ul class="sub-menu__list">
+						<li class="sub-menu__item">
+							<span class="arrow sub-menu__arrow"></span>
+							<a href="#" class="sub-menu__link menu-links">Консультация</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list">
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Выбор путевки</a></li>
+									
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">По правовым вопросам</a></li>
+										
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">По товарам и услугам</a></li>
+							</ul>
+						</li>
+								
+						<li class="sub-menu__item">
+							<span class="arrow sub-menu__arrow"></span>
+							<a href="#" class="sub-menu__link menu-links">Оформление</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list">
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Туристической путевкви</a></li>
+									
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Сопутствующих докуметов</a></li>
+							</ul>
+						</li>
+								
+						<li class="sub-menu__item">
+							<span class="arrow sub-menu__arrow"></span>
+							<a href="#" class="sub-menu__link menu-links">Страхование</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list">
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Жизни</a></li>
+									
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Здоровья</a></li>
+										
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Иммущества</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				
+				<!--Элемент меню первого уровня-->
+				<li class="menu__item">
+					<span class="arrow menu__arrow"></span>
+					<a href="#" class="menu__link menu-links">Товары</a>
+
+					<!--Элементы второго уровня-->
+					<ul class="sub-menu__list">
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Одежда</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Обувь</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Головные уборы</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Аксессуары</a></li>	
+					</ul>
+				</li>
+				
+				<!--Элемент меню первого уровня-->
+				<li class="menu__item">
+					<span class="arrow menu__arrow"></span>
+					<a href="#" class="menu__link menu-links">Курсы</a>
+
+					<!--Элементы второго уровня-->
+					<ul class="sub-menu__list">
+						<li class="sub-menu__item">
+							<span class="arrow sub-menu__arrow"></span>
+							<a href="#" class="sub-menu__link menu-links">Безопасный отдых</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list">
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Оказание ПМП</a></li>
+								
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Инструктаж по ТБ</a></li>
+							</ul>
+						</li>
+							
+						<li class="sub-menu__item">
+							<span class="arrow sub-menu__arrow"></span>
+							<a href="#" class="sub-menu__link menu-links">Общение</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list">
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Английский язык</a></li>
+								
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Китайский язык</a></li>
+									
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Французский язык</a></li>
+							</ul>
+						</li>
+								
+						<li class="sub-menu__item">
+							<span class="arrow sub-menu__arrow"></span>
+							<a href="#" class="sub-menu__link menu-links">Подготовка</a>
+
+							<!--Элементы третьего уровня-->
+							<ul class="sub-sub-menu__list">
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Парашютный спорт</a></li>
+									
+								<li class="sub-sub-menu__item"><a href="#" class="sub-sub-menu__link menu-links">Сплав по реке</a></li>
+							</ul>
+						</li>								
+					</ul>
+				</li>
+				
+				<!--Элемент меню первого уровня-->
+				<li class="menu__item">
+					<span class="arrow menu__arrow"></span>
+					<a href="#" class="menu__link menu-links">Информация</a>
+
+					<!--Элементы второго уровня-->
+					<ul class="sub-menu__list">
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Новости</a></li>
+							
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Акции</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Статьи</a></li>
+								
+						<li class="sub-menu__item"><a href="#" class="sub-menu__link menu-links">Вопрос ответ</a></li>
+					</ul>
+				</li>
+				
+				<!--Элемент меню первого уровня-->
+				<li class="menu__item">
+					<a href="#" class="menu__link menu-links">Контакты</a>
+				</li>
+			</ul>
+
+			<!--Затемнение от открытого меню-->
+			<div class="menu__bl"></div>
+
+			<!--Вспомогательное меню-->
+			<ul class="action menu__action" data-da=".menu__list, 575, first">
+				<!--Пользователь-->
+				<li class="action__item">
+					<a href="#" class="action__link action__link--user" ></a>
+				</li>
+				
+				<!--Поиск-->
+				<li class="action__item" >
+					<a href="#" class="action__link action__link--search"></a>
+				</li>
+						
+				<!--Корзина покупок-->
+				<li class="action__item">
+					<a href="#" class="action__link action__link--cart">
+						<span>0</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
